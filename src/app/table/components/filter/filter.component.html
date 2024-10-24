@@ -1,0 +1,27 @@
+<div class="filter" *ngIf="filterForm">
+  <div class="filter-item">
+    <label class="label">Timer, ms</label>
+    <input class="control" type="number" [formControl]="filterForm.controls.interval"/>
+    <div class="error">
+      {{ filterForm.controls.interval.hasError('invalidMilliseconds') ? 'Invalid milliseconds' : '' }}
+    </div>
+  </div>
+  <div class="filter-item">
+    <label class="label">Array size</label>
+    <input class="control" type="number" [formControl]="filterForm.controls.size"/>
+    <div class="error">
+      {{ filterForm.controls.size.hasError('incorrectNumber') ? 'Invalid array size' : '' }}
+    </div>
+  </div>
+  <div class="filter-item filter-item--large">
+    <label class="label left">Additional array ids</label>
+    <input class="control" type="text" [formControl]="filterForm.controls.specifiedIds"/>
+    <div class="error">
+      {{ filterForm.controls.specifiedIds.hasError('incorrectNumber') ? "Ids can't be negative" : '' }}
+      {{
+        filterForm.controls.specifiedIds.hasError('invalidFormat') ?
+          "Ids should be numbers and provided through the comma without any spaces (e.g. 1,2,3)" : ''
+      }}
+    </div>
+  </div>
+</div>

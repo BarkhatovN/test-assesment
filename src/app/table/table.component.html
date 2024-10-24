@@ -1,0 +1,32 @@
+<app-filter
+  [defaultIntervalMs]="defaultIntervalMs"
+  [defaultSize]="defaultSize"
+  (filterChanged)="filterChanged($event)"
+></app-filter>
+<div class="table">
+  <div class="header">
+    <div class="cell">id</div>
+    <div class="cell">int</div>
+    <div class="cell">float</div>
+    <div class="cell">color</div>
+    <div class="cell">child</div>
+  </div>
+  <div *ngFor="let item of list$ | async" class="row">
+    <div class="cell">{{ item.id }}</div>
+    <div class="cell">{{ item.int }}</div>
+    <div class="cell">{{ item.float }}</div>
+    <div class="cell">
+      <span [style.background-color]="item.color">{{ item.color }}</span>
+    </div>
+    <div class="cell-child">
+      <ng-container *ngIf="item.child as child">
+        <div class="cell">id</div>
+        <div class="cell">color</div>
+        <div class="cell">{{ child.id }}</div>
+        <div class="cell">
+          <span [style.background-color]="child.color">{{ child.color }}</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

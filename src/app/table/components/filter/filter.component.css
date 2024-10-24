@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.filter {
+  display: flex;
+  width: 100%;
+}
+
+.filter-item {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.filter-item--large {
+  flex: 2;
+}
+
+.label {
+  margin: auto;
+  height: 28px;
+}
+
+.label.left {
+  margin: auto auto auto 0;
+}
+
+.control {
+  padding: 5px 10px;
+}
+
+.error {
+  color: red;
+  height: 30px;
+}

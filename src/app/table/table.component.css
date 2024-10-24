@@ -1,0 +1,52 @@
+:host {
+  max-width: 90vw;
+  display: block;
+  background: lightgrey;
+  margin: auto;
+  padding-bottom: 20px;
+  border: 1px solid black;
+}
+
+.table {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.row {
+  border: 1px solid black;
+}
+
+
+.row, .header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 2fr;
+  grid-column-gap: 20px;
+  margin: 0 20px;
+}
+
+.header {
+  margin-top: 20px;
+}
+
+.header .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-overflow: ellipsis;
+}
+
+.row .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.cell-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  border: 1px solid black;
+  margin: 20px;
+}
